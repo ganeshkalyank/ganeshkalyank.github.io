@@ -92,7 +92,7 @@
             <div class="col-lg">
                 <h3>Contact me</h3>
                 <hr>
-                <form class="container" action="https://formspree.io/f/xjvjndol" method="post" target="_blank">
+                <form class="container" id="contact_form" action="https://formspree.io/f/xjvjndol" method="post" target="_blank">
                     <div class="form-floating mb-3">
                         <input class="form-control" type="text" id="name" name="name" placeholder="Name">
                         <label for="name">Name</label>
@@ -105,12 +105,34 @@
                         <textarea class="form-control" id="message" name="message" placeholder="Message"></textarea>
                         <label for="message">Message</label>
                     </div>
-                    <button type="submit" class="btn btn-dark mb-3">Send</button>
+                    <button type="submit" id="contact_form_submit" class="btn btn-dark mb-3">Send</button>
+                    <p id="contact_form_status"></p>
                 </form>
             </div>
             <div class="col-lg"></div>
         </div>
     </div>
+    <script>
+        var form = document.getElementById("contact_form");
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var status = document.getElementById("contact_form_status");
+          var data = new FormData(event.target);
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            status.innerHTML = "Thanks for your submission!";
+            form.reset()
+          }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
     <footer class="container-fluid bg-dark text-white border-top border-dark p-3">
         <div class="container text-center">
             <p>&copy; Copyright Ganesh Kalyan Kommisetti 2021.</p>
