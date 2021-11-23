@@ -52,6 +52,14 @@
             <a class="border-dark border-top border-bottom border-3 p-2 top-link" href="#contact">Contact</a>
         </div>
     </div>
+    <div class="container my-5">
+        <figure class="text-center">
+            <blockquote class="blockquote">
+                <p class="fs-1">Strive for progress, not perfection.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">Anonymous</figcaption>
+        </figure>
+    </div>
     <div class="container pt-5" id="about">
         <div class="row">
             <div class="col-lg">
@@ -79,57 +87,80 @@
             <div class="col-lg mt-3 mt-md-0">
                 <h3>Education</h3>
                 <hr>
-                <div class="list-group">
-                    <div class="list-group-item list-group-item-action"><p><span class="material-icons" style="vertical-align: -6px;">school</span> Narayana School, Ravulapalem</p></div>
-                    <div class="list-group-item list-group-item-action"><p><span class="material-icons" style="vertical-align: -6px;">functions</span> Narayana College, Hyderabad</p></div>
-                    <div class="list-group-item list-group-item-action"><p><span class="material-icons" style="vertical-align: -6px;">code</span> Sastra University, Thanjavur</p></div>
-                </div>
+                <figure>
+                    <blockquote class="blockquote">
+                        <p><span class="material-icons" style="vertical-align: -6px;">school</span> Narayana School, Ravulapalem</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">2015-2019</figcaption>
+                </figure>
+                <figure>
+                    <blockquote class="blockquote">
+                        <p><span class="material-icons" style="vertical-align: -6px;">functions</span> Narayana College, Hyderabad</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">2019-2021</figcaption>
+                </figure>
+                <figure>
+                    <blockquote class="blockquote">
+                        <p><span class="material-icons" style="vertical-align: -6px;">code</span> Sastra University, Thanjavur</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">2021-2025</figcaption>
+                </figure>
             </div>
         </div>
     </div>
     <div class="container" id="contact">
         <div class="row">
             <div class="col-lg">
-                <h3>Contact me</h3>
+                <h3>Contact Form</h3>
                 <hr>
                 <form class="container" id="contact_form" action="https://formspree.io/f/xjvjndol" method="post" target="_blank">
                     <div class="form-floating mb-3">
-                        <input class="form-control" type="text" id="name" name="name" placeholder="Name">
-                        <label for="name">Name</label>
+                        <input class="form-control" type="text" id="name" name="name" placeholder="Name" required>
+                        <label for="name">Name *</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input class="form-control" type="email" id="email" name="name" placeholder="Email">
-                        <label for="email">Email</label>
+                        <input class="form-control" type="email" id="email" name="name" placeholder="Email" required>
+                        <label for="email">Email *</label>
                     </div>
                     <div class="form-floating mb-3">
                         <textarea class="form-control" id="message" name="message" placeholder="Message"></textarea>
                         <label for="message">Message</label>
                     </div>
                     <button type="submit" id="contact_form_submit" class="btn btn-dark mb-3">Send</button>
-                    <p id="contact_form_status"></p>
+                    <div id="contact_form_status"></div>
                 </form>
             </div>
-            <div class="col-lg"></div>
+            <div class="col-lg">
+                <h3>Contact Details</h3>
+                <hr>
+                <h4>Hate filling out forms?</h4><br>
+                <p>Then, feel free to mail me through,</p>
+                <p>Email : srikgk333@gmail.com</p>
+            </div>
         </div>
     </div>
     <script>
         var form = document.getElementById("contact_form");
         async function handleSubmit(event) {
-          event.preventDefault();
-          var status = document.getElementById("contact_form_status");
-          var data = new FormData(event.target);
-          fetch(event.target.action, {
+            event.preventDefault();
+            document.getElementById("contact_form_submit").classList.add("disabled");
+            document.getElementById("contact_form_submit").innerHTML = "Sending...";
+            var status = document.getElementById("contact_form_status");
+            var data = new FormData(event.target);
+            fetch(event.target.action, {
             method: form.method,
             body: data,
             headers: {
                 'Accept': 'application/json'
             }
-          }).then(response => {
-            status.innerHTML = "Thanks for your submission!";
-            form.reset()
-          }).catch(error => {
-            status.innerHTML = "Oops! There was a problem submitting your form"
-          });
+            }).then(response => {
+                document.getElementById("contact_form_submit").classList.remove("disabled");
+                document.getElementById("contact_form_submit").innerHTML = "Send";
+                status.innerHTML = "<p class='alert alert-success' role='alert'>Message sent successfully.</p>";
+                form.reset()
+            }).catch(error => {
+                status.innerHTML = "<p class='alert alert-danger' role='alert'>Oops! There was an error sending your message.</p>";
+            });
         }
         form.addEventListener("submit", handleSubmit)
     </script>
