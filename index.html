@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Source+Sans+Pro:wght@700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
@@ -25,6 +26,7 @@
         .top-link {
             text-decoration: none;
             color: black;
+            transition: 0.3s;
         }
         .top-link:hover {
             color: white;
@@ -37,58 +39,132 @@
         .footer-link:hover {
             filter: invert(0%);
         }
+        .kgk-card {
+            transition: 0.3s;
+        }
+        .kgk-card:hover {
+            background-color: #212529;
+            color: #f8f9fa;
+            transform: scale(1.05);
+            box-shadow: 4px 4px 8px grey;
+        }
+        .kgk-card:hover img {
+            filter: invert(100%);
+        }
+        #portfolio img {
+            width: 100%;
+            transition: 0.3s;
+        }
+        #portfolio img:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 10px grey;
+        }
     </style>
+    <script>
+        $(document).ready(function() {
+            $(".placeholder").removeClass("placeholder");
+            $(".placeholder").removeClass("placeholder-glow");
+        });
+    </script>
 </head>
 <body>
     <div class="container-fluid text-center py-5">
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
-                <h2>Ganesh Kalyan Kommisetti</h2>
+                <h2 class="placeholder placeholder-glow">Ganesh Kalyan Kommisetti</h2>
             </div>
             <div class="col-lg-3"></div>
         </div>
         <br>
         <div class="container-fluid">
-            <a class="border-dark border-top border-bottom border-1 p-2 top-link" href="#about">About</a>
-            <a class="border-dark border-top border-bottom border-1 p-2 top-link" href="#contact">Contact</a>
-            <a class="border-dark border-top border-bottom border-1 p-2 top-link" href="#portfolio">Portfolio</a>
+            <a class="border-dark border-top border-bottom border-1 p-2 top-link placeholder placeholder-glow" href="#about">About</a>
+            <a class="border-dark border-top border-bottom border-1 p-2 top-link placeholder placeholder-glow" href="#contact">Contact</a>
+            <a class="border-dark border-top border-bottom border-1 p-2 top-link placeholder placeholder-glow" href="#portfolio">Portfolio</a>
         </div>
     </div>
     <div class="container my-5">
         <figure class="text-center">
             <blockquote class="blockquote">
-                <p class="fs-1" style="font-family: 'Lobster', cursive;">Strive for progress, not perfection.</p>
+                <p class="fs-1 placeholder placeholder-glow" style="font-family: 'Lobster', cursive;">Strive for progress, not perfection.</p>
             </blockquote>
-            <figcaption class="blockquote-footer">Anonymous</figcaption>
+            <figcaption class="blockquote-footer placeholder placeholder-glow">Anonymous</figcaption>
         </figure>
     </div>
     <div class="container pt-5" id="about">
         <div class="row">
             <div class="col-lg">
-                <h3>About me</h3>
+                <h3 class="placeholder placeholder-glow">About me</h3>
                 <hr>
-                <p>I am Ganesh Kalyan Kommisetti. You can simply call me Kalyan. I'm a Computer Science undergraduate currently pursuing B.Tech in Computer Science and Engineering at Sastra University, Thanjavur.</p>
-                <p>Personally, I love to watch thriller and sci-fi movies. Movies of Christopher Nolan are my favourite. I often read books as well. I prefer reading biographies of well-known pesonalities.</p>
+                <p class="placeholder placeholder-glow">I am Ganesh Kalyan Kommisetti. You can simply call me Kalyan. I'm a Computer Science undergraduate currently pursuing B.Tech in Computer Science and Engineering at Sastra University, Thanjavur.</p>
+                <p class="placeholder placeholder-glow">Personally, I love to watch thriller and sci-fi movies. Movies of Christopher Nolan are my favourite. I often read books as well. I prefer reading biographies of well-known pesonalities.</p>
             </div>
             <div class="col-lg">
-                <img class="rounded" src="assets/home-image.jpeg" style="width:100%;">
+                <img class="rounded placeholder placeholder-glow" src="assets/home-image.jpeg" style="width:100%;">
             </div>
         </div>
     </div>
+    <div class="container mt-5" id="portfolio">
+        <h3 class="text-center">My Work</h3>
+        <hr>
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="assets/Childrens_Day_Instagram.jpg" id="portfolio-img" class="mb-3" alt="Children's Day">
+                <img src="assets/Happy Bhogi.jpg" id="portfolio-img" class="mb-3" alt="Bhogi">
+            </div>
+            <div class="col-lg-3">
+                <img src="assets/Happy_Republic_Day.jpg" id="portfolio-img" class="mb-3" alt="Republic Day">
+                <img src="assets/Donut_L2_P5.png" id="portfolio-img" class="mb-3" alt="Blender Donut">
+                <img src="assets/Cup_L3_P2.jpg" class="mb-3" id="portfolio-img" alt="Blender Cup">
+            </div>
+            <div class="col-lg-3">
+                <img src="assets/Happy New Year.jpg" id="portfolio-img" class="mb-3" alt="New Year">
+                <img src="assets/Instagram 1st.jpg" id="portfolio-img" class="mb-3" alt="Instagram 1st">
+            </div>
+            <div class="col-lg-3">
+                <img src="assets/SRT_Recruitment_Poster_Minifed.jpg" class="mb-3" id="portfolio-img" alt="SRT Recruitment">
+                <img src="assets/Happy Pongal.jpg" class="mb-3" id="portfolio-img" alt="Pongal">
+            </div>
+        </div>
+    </div>
+    <!--Construction
+    <div class="modal fade" aria-hidden="true" tabindex="-1" aria-labelledby="portfolioModal" id="portfolioModal">
+        <div class="modal-dialog">
+            <img id="portfolioModalImage">
+        </div>
+    </div>-->
     <div class="container">
         <div class="row py-5">
             <div class="col-lg">
                 <h3>Skills</h3>
                 <hr>
-                <div class="container">
+                <!--<div class="container">
                     <div class="list-group">
                         <div class="list-group-item list-group-item-action"><p><span class="material-icons" style="vertical-align: -6px;">code</span> Web Development</p></div>
                         <div class="list-group-item list-group-item-action"><p><span class="material-icons" style="vertical-align: -6px;">image</span> Graphic Design</p></div>
                         <div class="list-group-item list-group-item-action"><p><span class="material-icons" style="vertical-align: -6px;">movie</span> Motion Graphics</p></div>
                     </div>
+                </div>-->
+                <div class="row gx-5 gy-5 text-center">
+                    <div class="col-lg-4">
+                        <div class="border border-dark p-3 kgk-card">
+                            <img src="assets/web-design.png" height="75">
+                            <p>Web Design</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="border border-dark p-3 kgk-card">
+                            <img src="assets/hoarding.png" height="75">
+                            <p>Graphic Design</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="border border-dark p-3 kgk-card">
+                            <img src="assets/motion-graphics.png" height="75">
+                            <p>Motion Graphics</p>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
             <div class="col-lg mt-3 mt-md-0">
                 <h3>Education</h3>
