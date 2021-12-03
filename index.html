@@ -16,6 +16,9 @@
             font-weight: 400;
             background-color: #f0f0f0;
         }
+        body, html {
+            height: 100%;
+        }
         h1, h2, h3, h4, h5, h6, b {
             font-family: 'Raleway', sans-serif;
             font-weight: 700;
@@ -34,7 +37,7 @@
             text-decoration: none;
         }
         .footer-link {
-            filter: invert(100%);
+            filter: invert(25%);
         }
         .footer-link:hover {
             filter: invert(0%);
@@ -59,15 +62,79 @@
             transform: scale(1.05);
             box-shadow: 5px 5px 10px grey;
         }
+        .home-image {
+            background: url(assets/man_laptop_code.jpg);
+            height: 300px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .blur {
+            backdrop-filter: blur(20px);
+        }
+        .kgk-link {
+            display: inline-block;
+            position: relative;
+            color: black;
+        }
+        .kgk-link:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: black;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .kgk-link:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .kgk-link.active:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: black;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
     </style>
     <script>
         $(window).on("load", function() {
             $(".placeholder").removeClass("placeholder");
             $(".placeholder-glow").removeClass("placeholder-glow");
         });
+        $(window).scroll(function() {    
+            var scroll = $(window).scrollTop();
+            if (scroll >= 300) {
+                $("#topNavbarMain").addClass("blur");
+            } else {
+                $("#topNavbarMain").removeClass("blur");
+            }
+        });
+        var scroll = $(window).scrollTop();
+        if (scroll >= 300) {
+            $("#topNavbarMain").removeClass("p-4");
+        } else {
+            $("#topNavbarMain").addClass("p-4");
+        }
     </script>
 </head>
-<body>
+<body id="body" data-bs-spy="scroll" data-bs-target="#topNavbarMain">
+    <!--
     <div class="container-fluid text-center py-5">
         <div class="row">
             <div class="col-lg-3"></div>
@@ -82,13 +149,34 @@
             <a class="border-dark border-top border-bottom border-1 p-2 top-link placeholder" href="#contact">Contact</a>
             <a class="border-dark border-top border-bottom border-1 p-2 top-link placeholder" href="#portfolio">Portfolio</a>
         </div>
-    </div>
-    <div class="container my-5">
+    </div>-->
+    <nav class="navbar navbar-expand-lg navbar-light p-2 fixed-top" id="topNavbarMain">
+        <div class="container-fluid">
+            <a class="navbar-brand kgk-link" href="#top">Ganesh Kalyan Kommisetti</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar" aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link kgk-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link kgk-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link kgk-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="home-image mb-5" id="top">
         <figure class="text-center placeholder-glow">
             <blockquote class="blockquote">
-                <p class="fs-1 placeholder" style="font-family: 'Lobster', cursive;">Strive for progress, not perfection.</p>
+                <p class="fs-1 placeholder" style="font-family: 'Lobster', cursive; color: black;">Strive for progress, not perfection.</p>
             </blockquote>
-            <figcaption class="blockquote-footer placeholder">Anonymous</figcaption>
+            <figcaption class="blockquote-footer placeholder" style="color: black;">Anonymous</figcaption>
         </figure>
     </div>
     <div class="container pt-5" id="about">
@@ -252,7 +340,7 @@
         }
         form.addEventListener("submit", handleSubmit)
     </script>
-    <footer class="container-fluid bg-dark text-white border-top border-dark p-3">
+    <footer class="container-fluid bg-light text-dark p-3">
         <div class="container text-center">
             <p>&copy; Copyright Ganesh Kalyan Kommisetti 2021.</p>
             <a class="btn footer-link" target="_blank" href="https://www.instagram.com/ganeshkalyank/"><img src="assets/instagram.png" height="24"></a>
