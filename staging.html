@@ -64,10 +64,10 @@
                         method: 'post',
                         url: url,
                         data: form.serialize(),
-                        success: function() {
+                        success: function(data) {
                             $("#contact_form_status").html("Message sent successfully.");
                         },
-                        error: function() {
+                        error: function(data) {
                             $("#contact_form_status").html("Oops! There was an error. Please try again.");
                         }
                     });
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container text-center" style="margin-top: 150px;">
+        <div class="container text-center" style="margin-top: 150px;margin-bottom: 150px;">
             <figure>
                 <blockquote class="blockquote fs-1" style="font-family: 'Meow Script',cursive;">
                     <p>Strive for progress, not perfection.</p>
@@ -99,19 +99,48 @@
                 <figcaption class="blockquote-footer">Anonymous</figcaption>
             </figure>
         </div>
-        <div class="container mt-5" id="about">
+        <div class="container" id="about">
+            <h3 class="text-center">About</h3>
+            <hr>
             <div class="row">
                 <div class="col-lg-6">
-                    <h3>Who am I?</h3>
-                    <hr>
+                    <h4>Who am I?</h4>
                     <p>I am Ganesh Kalyan Kommisetti. You can simply call me Kalyan. I'm a Computer Science undergraduate currently pursuing B.Tech in Computer Science and Engineering at Sastra University, Thanjavur.</p>
                     <p>Personally, I love to watch thriller and sci-fi movies. Movies of Christopher Nolan are my favourite. I often read books as well. I prefer reading biographies of well-known pesonalities.</p>
                 </div>
+                <div class="col-lg-6">
+                    <h4>Education</h4>
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p>B.Tech. Computer Science and Engineering</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">Sastra University, Thanjavur</figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
+        <div class="container mt-5" id="portfolio">
+            <h3 class="text-center">Portfolio</h3>
+            <hr>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+        </div>
         <div class="container mt-5" id="contact">
+            <h3 class="text-center">Contact</h3>
+            <hr>
             <div class="row">
                 <div class="col-lg-6">
+                    <h4 class="mb-3">Contact Form</h4>
                     <form id="contact_form" action="https://formspree.io/f/xjvjndol" method="post" target="_blank">
                         <div class="form-floating mb-3">
                             <input class="form-control" type="text" id="name" name="name" placeholder="Name" required>
