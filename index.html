@@ -68,7 +68,7 @@
                 -webkit-backdrop-filter: blur(10px);
                 background-color: rgba(248,249,250,0.75);
             }
-            .loader {
+            /* .loader {
                 position: fixed;
                 left: 0px;
                 top: 0px;
@@ -76,7 +76,7 @@
                 height: 100%;
                 z-index: 1100;
                 background: url("assets/preloader.gif") 50% 50% no-repeat rgb(255,255,255);
-            }
+            } */
         </style>
         <script>
             $(document).ready(function(){
@@ -110,9 +110,9 @@
                         $("#navBar").removeClass("shadow navblur");
                     }
                 });
-                $(window).on("load",function(){
+                /* $(window).on("load",function(){
                     $(".loader").fadeOut("slow");
-                });
+                }); */
                 $("#portfolio img").hover(function(){
                     $(this).addClass("shadow");
                 }, function(){
@@ -139,13 +139,14 @@
                 <div class="collapse navbar-collapse" id="navContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a href="#about" class="nav-link kgk-link">About</a></li>
+                        <li class="nav-item"><a href="#skills" class="nav-link kgk-link">Skills</a></li>
                         <li class="nav-item"><a href="#portfolio" class="nav-link kgk-link">Portfolio</a></li>
                         <li class="nav-item"><a href="#contact" class="nav-link kgk-link">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="loader"></div>
+        <!--<div class="loader"></div>-->
         <div class="container text-center" style="margin-top: 150px;margin-bottom: 150px;">
             <figure>
                 <blockquote class="blockquote fs-1" style="font-family: 'Meow Script',cursive;">
@@ -155,7 +156,7 @@
             </figure>
         </div>
         <div class="container" id="about">
-            <h3 class="text-center">About</h3>
+            <h3 class="text-center text-primary">About</h3>
             <hr>
             <div class="row">
                 <div class="col-lg-6">
@@ -186,8 +187,40 @@
                 </div>
             </div>
         </div>
+        <div class="container mt-5" id="skills">
+            <h3 class="text-center text-primary">Skills</h3>
+            <hr>
+            <div class="px-4">
+                <div class="row gx-5 gy-5">
+                    <div class="col-lg-4">
+                        <div class="shadow rounded p-5 text-center">
+                            <img src="assets/web-design.png" style="height: 75px;">
+                            <h4 class="mt-3">Web Development</h4>
+                            <hr>
+                            <p>Web development is the work involved in developing a website for the Internet or an intranet. Web development can range from developing a simple single static page of plain text to complex web applications etc.,</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="shadow rounded p-5 text-center">
+                            <img src="assets/hoarding.png" style="height: 75px;">
+                            <h4 class="mt-3">Graphic Design</h4>
+                            <hr>
+                            <p>Graphic design is the profession and academic discipline whose activity consists in projecting visual communications intended to transmit specific messages to social groups, with specific objectives.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="shadow rounded p-5 text-center">
+                            <img src="assets/motion-graphics.png" style="height: 75px;">
+                            <h4 class="mt-3">Video Editing</h4>
+                            <hr>
+                            <p>Video editing is the manipulation and arrangement of video shots. Video editing is used to structure and present all video information, including films and television shows, video advertisements and video essays.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container mt-5" id="portfolio">
-            <h3 class="text-center">Portfolio</h3>
+            <h3 class="text-center text-primary">Portfolio</h3>
             <hr>
             <div class="row">
                 <div class="col-lg-3">
@@ -209,7 +242,7 @@
             </div>
         </div>
         <div class="container mt-5" id="contact">
-            <h3 class="text-center">Contact</h3>
+            <h3 class="text-center text-primary">Contact</h3>
             <hr>
             <div class="row">
                 <div class="col-lg-6">
