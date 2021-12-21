@@ -18,6 +18,9 @@
                 font-family: 'Raleway',sans-serif;
                 font-weight: 700;
             }
+            #navBar {
+                transition: .3s;
+            }
             .kgk-link {
                 display: inline-block;
                 position: relative;
@@ -59,7 +62,11 @@
             }
             #portfolio img:hover {
                 transform: scale(1.05);
-                box-shadow: 5px 5px 10px grey;
+            }
+            .navblur {
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                background-color: rgba(248,249,250,0.75);
             }
         </style>
         <script>
@@ -86,11 +93,32 @@
                         }
                     });
                 });
+                $(window).scroll(function(){
+                    var height = $(window).scrollTop();
+                    if (height>250) {
+                        $("#navBar").addClass("shadow navblur");
+                    } else {
+                        $("#navBar").removeClass("shadow navblur");
+                    }
+                });
+                $("#portfolio img").hover(function(){
+                    $(this).addClass("shadow");
+                }, function(){
+                    $(this).removeClass("shadow");
+                });
+                $("#navBar").on("show.bs.collapse",function(){
+                    $(this).addClass("shadow navblur")
+                });
+                
+                $("#navBar").on("hide.bs.collapse",function(){
+                    var height = $(window).scrollTop();
+                    if(height<250) $(this).removeClass("shadow navblur")
+                });
             });
         </script>
     </head>
     <body data-bs-spy="scroll" data-bs-target="#navContent">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom border-primary">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top border-primary" id="navBar">
             <div class="container p-2">
                 <a class="navbar-brand text-primary" href="#"><b>Kalyan</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="#navContent" aria-expanded="false" aria-label="Toggle Navigation">
@@ -198,7 +226,7 @@
                 </div>
             </div>
         </div>
-        <footer class="bg-light mt-5">
+        <footer class="shadow mt-5">
             <div class="container p-5 text-center">
                 <p>&copy; Copyright Ganesh Kalyan Kommisetti 2021. All rights reserved.</p>
                 <div>
