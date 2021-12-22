@@ -68,6 +68,12 @@
                 -webkit-backdrop-filter: blur(10px);
                 background-color: rgba(248,249,250,0.75);
             }
+            #skills #skill-card {
+                transition: .3s;
+            }
+            #skills #skill-card:hover img {
+                filter: invert(100%);
+            }
         </style>
         <script>
             $(document).ready(function(){
@@ -93,6 +99,7 @@
                         }
                     });
                 });
+
                 $(window).scroll(function(){
                     var height = $(window).scrollTop();
                     if (height>250) {
@@ -101,11 +108,19 @@
                         $("#navBar").removeClass("shadow navblur");
                     }
                 });
+
                 $("#portfolio img").hover(function(){
                     $(this).addClass("shadow");
                 }, function(){
                     $(this).removeClass("shadow");
                 });
+
+                $("#skills #skill-card").hover(function(){
+                    $(this).addClass("bg-primary text-white");
+                }, function(){
+                    $(this).removeClass("bg-primary text-white");
+                });
+
                 $("#navBar").on("show.bs.collapse",function(){
                     $(this).addClass("shadow navblur")
                 });
@@ -180,7 +195,7 @@
             <div class="px-4">
                 <div class="row gx-5 gy-5">
                     <div class="col-lg-4">
-                        <div class="shadow rounded px-3 py-5 text-center">
+                        <div class="shadow rounded px-3 py-5 text-center" id="skill-card">
                             <img src="assets/web-design.png" style="height: 75px;">
                             <h4 class="mt-3">Web Development</h4>
                             <hr>
@@ -188,7 +203,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="shadow rounded px-3 py-5 text-center">
+                        <div class="shadow rounded px-3 py-5 text-center" id="skill-card">
                             <img src="assets/hoarding.png" style="height: 75px;">
                             <h4 class="mt-3">Graphic Design</h4>
                             <hr>
@@ -196,7 +211,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="shadow rounded px-3 py-5 text-center">
+                        <div class="shadow rounded px-3 py-5 text-center" id="skill-card">
                             <img src="assets/motion-graphics.png" style="height: 75px;">
                             <h4 class="mt-3">Video Editing</h4>
                             <hr>
@@ -211,20 +226,20 @@
             <hr>
             <div class="row">
                 <div class="col-lg-3">
-                    <img src="assets/Childrens_Day_Instagram.jpg" id="portfolio-img" class="mb-3" alt="Children's Day">
-                    <img src="assets/Happy Bhogi.jpg" id="portfolio-img" class="mb-3" alt="Bhogi">
+                    <img src="assets/Childrens_Day_Instagram.jpg" class="mb-3" alt="Children's Day">
+                    <img src="assets/Happy Bhogi.jpg" class="mb-3" alt="Bhogi">
                 </div>
                 <div class="col-lg-3">
-                    <img src="assets/Happy_Republic_Day.jpg" id="portfolio-img" class="mb-3" alt="Republic Day">
-                    <img src="assets/Donut_L2_P5.png" id="portfolio-img" class="mb-3" alt="Blender Donut">
+                    <img src="assets/Happy_Republic_Day.jpg" class="mb-3" alt="Republic Day">
+                    <img src="assets/Donut_L2_P5.png" class="mb-3" alt="Blender Donut">
                 </div>
                 <div class="col-lg-3">
-                    <img src="assets/Happy New Year.jpg" id="portfolio-img" class="mb-3" alt="New Year">
-                    <img src="assets/Instagram 1st.jpg" id="portfolio-img" class="mb-3" alt="Instagram 1st">
+                    <img src="assets/Happy New Year.jpg" class="mb-3" alt="New Year">
+                    <img src="assets/Instagram 1st.jpg" class="mb-3" alt="Instagram 1st">
                 </div>
                 <div class="col-lg-3">
-                    <img src="assets/SRT_Recruitment_Poster_Minifed.jpg" class="mb-3" id="portfolio-img" alt="SRT Recruitment">
-                    <img src="assets/Happy Pongal.jpg" class="mb-3" id="portfolio-img" alt="Pongal">
+                    <img src="assets/SRT_Recruitment_Poster_Minifed.jpg" class="mb-3" alt="SRT Recruitment">
+                    <img src="assets/Happy Pongal.jpg" class="mb-3" alt="Pongal">
                 </div>
             </div>
         </div>
