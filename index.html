@@ -7,136 +7,15 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="static/main.css">
         <link rel="icon" href="favicon.ico">
         <link rel="shortcut icon" href="favicon.ico">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Meow+Script&display=swap');
-            body {
-                font-family: 'Raleway',sans-serif;
-                font-weight: 400;
-            }
-            h1,h2,h3,h4,h5,h6,b {
-                font-family: 'Raleway',sans-serif;
-                font-weight: 700;
-            }
-            #navBar {
-                transition: .3s;
-            }
-            .kgk-link {
-                display: inline-block;
-                position: relative;
-                color: black;
-            }
-            .kgk-link:after {
-                content: '';
-                position: absolute;
-                width: 100%;
-                transform: scaleX(0);
-                height: 2px;
-                bottom: 0;
-                left: 0;
-                background-color: #0d6efd;
-                transform-origin: bottom right;
-                transition: transform 0.25s ease-out;
-            }
-            .kgk-link:hover:after {
-                transform: scaleX(1);
-                transform-origin: bottom left;
-            }
-            .kgk-link.active:after {
-                content: '';
-                position: absolute;
-                width: 100%;
-                transform: scaleX(0);
-                height: 2px;
-                bottom: 0;
-                left: 0;
-                background-color: #0d6efd;
-                transform-origin: bottom right;
-                transition: transform 0.25s ease-out;
-                transform: scaleX(1);
-                transform-origin: bottom left;
-            }
-            #portfolio img {
-                width: 100%;
-                transition: 0.3s;
-            }
-            #portfolio img:hover {
-                transform: scale(1.05);
-            }
-            .navblur {
-                backdrop-filter: saturate(180%) blur(20px);
-                -webkit-backdrop-filter: saturate(180%) blur(20px);
-                background-color: rgba(255, 255, 255, 0.72);
-            }
-            #skills #skill-card {
-                transition: .3s;
-            }
-            #skills #skill-card:hover img {
-                filter: invert(100%);
-            }
-            footer a:hover i {
-                color: gray;
-            }
-        </style>
-        <script>
-            $(document).ready(function(){
-                $('#contact_form').on('submit',function(e){
-                    e.preventDefault();
-                    $("#contact_form_submit").addClass("disabled");
-                    $("#contact_form_submit").html("Sending...");
-                    var form = $(this);
-                    var url = form.attr('action');
-                    $.ajax({
-                        method: 'post',
-                        url: url,
-                        data: form.serialize(),
-                        success: function(data) {
-                            $("#contact_form_status").html("<p class='alert alert-success'>Message sent successfully.</p>");
-                            $("#contact_form_submit").removeClass("disabled");
-                            $("#contact_form_submit").html("Send");
-                        },
-                        error: function(data) {
-                            $("#contact_form_status").html("<p class='alert alert-success'>Message sent successfully.</p>");        
-                            $("#contact_form_submit").removeClass("disabled");
-                            $("#contact_form_submit").html("Send");
-                        }
-                    });
-                });
-
-                $(window).scroll(function(){
-                    var height = $(window).scrollTop();
-                    if (height>250) {
-                        $("#navBar").addClass("shadow navblur");
-                    } else {
-                        $("#navBar").removeClass("shadow navblur");
-                    }
-                });
-
-                $("#portfolio img").hover(function(){
-                    $(this).addClass("shadow");
-                }, function(){
-                    $(this).removeClass("shadow");
-                });
-
-                $("#skills #skill-card").hover(function(){
-                    $(this).addClass("bg-primary text-white");
-                }, function(){
-                    $(this).removeClass("bg-primary text-white");
-                });
-
-                $("#navBar").on("show.bs.collapse",function(){
-                    $(this).addClass("shadow navblur")
-                });
-                
-                $("#navBar").on("hide.bs.collapse",function(){
-                    var height = $(window).scrollTop();
-                    if(height<250) $(this).removeClass("shadow navblur")
-                });
-            });
-        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="static/main.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEZY6B3WD7"></script>
         <script>
@@ -183,7 +62,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h4>Education</h4>
-                    <figure>
+                    <!-- <figure>
                         <blockquote class="blockquote">
                             <p>Sastra University, Thanjavur</p>
                         </blockquote>
@@ -200,7 +79,39 @@
                             <p>Narayana School, Ravulapalem</p>
                         </blockquote>
                         <figcaption class="blockquote-footer">till 10th Standard</figcaption>
-                    </figure>
+                    </figure> -->
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/sastra.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sastra University</h5>
+                                    <p class="card-text">B.Tech. in Computer Science and Engineering</p>
+                                    <p class="card-text">2021-2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/narayana.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title">Narayana School</h5>
+                                    <p class="card-text">7th to SSC</p>
+                                    <p class="card-text">2015-2019</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/narayana.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title">Narayana College</h5>
+                                    <p class="card-text">Inter in MPC</p>
+                                    <p class="card-text">2019-2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -283,6 +194,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h4>Hate filling out forms?</h4><br>
+                    <p>Ping me on Instagram or Drop a mail.</p>
                     <div class="row text-center">
                         <div class="col-lg-6">
                             <a href="https://www.instagram.com/ganeshkalyank/" style="text-decoration:none;">
