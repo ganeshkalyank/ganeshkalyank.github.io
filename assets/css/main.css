@@ -1,0 +1,134 @@
+html,body {
+    height: 100%;
+}
+body {
+    font-family: 'Poppins',sans-serif;
+    font-weight: 400;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Lato', sans-serif;
+}
+b {
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
+}
+.navbar-blur {
+    background-color: rgba(247,255,232,0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    transition: .3s;
+}
+.landing-page {
+    height: 100%;
+    background: rgb(247, 255, 232);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.home-header {
+    font-size: 75px;
+}
+.home-text {
+    font-size: 18px;
+}
+@media only screen and (max-width: 678px) {
+    .landing-page {
+        height: 150%;
+    }
+    .home-header {
+        font-size: 50px;
+    }
+}
+.home-btn {
+    background-color: rgb(117,201,43);
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+.home-btn:hover {
+    color: black;
+    background-color: rgb(255,255,255);
+}
+.navbar-toggler, .navbar-toggler:focus, .navbar-toggler:active {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.card-hover-anim {
+    background-size: 400% 400%;
+    background-image: radial-gradient(rgb(247, 255, 232) 50%, transparent 50%);
+    transition: background-position .3s, color .3s ease;
+}
+.card-hover-anim:hover {
+    background-position: 50% 50%;
+    transition: background-position .5s, color .3s ease;
+    color: black;
+}
+.sec-title {
+    background-color: rgb(117,201,43);
+    color: white;
+    text-align: center;
+}
+.more-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.more-link i {
+    position: relative;
+    left: 5px;
+    transition: left ease .3s;
+}
+.more-link:hover {
+    opacity: 75%;
+    color: black;
+}
+.more-link:hover > i {
+    position: relative;
+    left: 15px;
+}
+.footer-block {
+    background-color: rgb(247, 255, 232);
+}
+.social-link {
+    text-decoration: none;
+    color: black;
+}
+.social-link:hover {
+    opacity: 75%;
+    color: black;
+}
+.social-link i {
+    position: relative;
+    left: 0;
+    top: 0;
+    transition-property: left,top;
+    transition: ease .3s;
+}
+.social-link:hover > i {
+    left: 5px;
+    top: -5px;
+}
+.skill-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.submit-btn {
+    background-color: rgb(117,201,43);
+    outline: none;
+    border: none;
+    color: white;
+    transition: .3s;
+}
+.submit-btn:hover {
+    color: black;
+    background-color: rgb(247, 255, 232);
+}
+.nav-link {
+    transition: .3s;
+}
+.nav-link:hover {
+    color: rgb(117,201,43)!important;
+    transform: scale(1.1);
+}
