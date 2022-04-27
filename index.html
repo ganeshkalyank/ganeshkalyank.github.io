@@ -166,16 +166,16 @@
                 <form method="post" id="contact_form" action="https://formspree.io/f/xjvjndol" target="_blank" class="p-5 shadow rounded-3">
                     <h4 class="mb-3" style="color: rgb(117,201,43);">Message me</h4>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" placeholder="." name="name">
+                        <input type="text" class="form-control" placeholder="." name="name" required>
                         <label>Name *</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" placeholder="." name="email">
+                        <input type="email" class="form-control" placeholder="." name="email" required>
                         <label>Email *</label>
                     </div>
                     <div class="form-floating mb-3">
                         <textarea type="text" class="form-control" placeholder="." name="message" style="height: 100px;"></textarea>
-                        <label>Message *</label>
+                        <label>Message</label>
                     </div>
                     <button class="submit-btn shadow rounded-pill p-3 mb-3" id="contact_form_submit" type="submit">Send message</button>
                     <div id="contact_form_status"></div>
