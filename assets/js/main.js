@@ -29,8 +29,7 @@ $(document).ready(function(){
             data: form.serialize(),
             dataType: 'json',
             success: function(data) {
-                msg = JSON.parse(data);
-                $("#contact_form_status").html("<p class='alert alert-success'>"+msg.message+"</p>");
+                $("#contact_form_status").html("<p class='alert alert-success'>"+data.message+"</p>");
                 $("#contact_form_submit").removeClass("disabled");
                 $("#contact_form_submit").html("Send");
             },
