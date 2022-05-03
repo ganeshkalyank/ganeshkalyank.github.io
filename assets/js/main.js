@@ -24,16 +24,18 @@ $(document).ready(function(){
         var form = $(this);
         var url = form.attr('action');
         $.ajax({
-            method: 'post',
+            method: 'POST',
             url: url,
             data: form.serialize(),
+            dataType: 'json',
             success: function(data) {
-                $("#contact_form_status").html("<p class='alert alert-success'>Message sent successfully.</p>");
+                msg = JSON.parse(data);
+                $("#contact_form_status").html("<p class='alert alert-success'>"+msg.message+"</p>");
                 $("#contact_form_submit").removeClass("disabled");
                 $("#contact_form_submit").html("Send");
             },
-            error: function(data) {
-                $("#contact_form_status").html("<p class='alert alert-success'>Message sent successfully.</p>");        
+            error: function() {
+                $("#contact_form_status").html("<p class='alert alert-danger'>There was an error! Please try again!</p>");
                 $("#contact_form_submit").removeClass("disabled");
                 $("#contact_form_submit").html("Send");
             }
