@@ -131,3 +131,10 @@ b {
 .nav-link:hover {
     color: rgb(117,201,43)!important;
 }
+.langs-known-item {
+    font-size: 100px;
+    transition: .3s;
+}
+.langs-known-item:hover {
+    color: rgb(117,201,43);
+}
