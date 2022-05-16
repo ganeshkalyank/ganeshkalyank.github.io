@@ -29,7 +29,10 @@ $(document).ready(function(){
             data: form.serialize(),
             dataType: 'json',
             success: function(data) {
-                $("#contact_form_status").html("<p class='alert alert-success'>"+data.message+"</p>");
+                if (data.status=="success") {var class_name = "success"}
+                else if (data.status=="error") {var class_name = "danger"}
+                else {var class_name = "warning"}
+                $("#contact_form_status").html("<p class='alert alert-"+class_name+"'>"+data.message+"</p>");
                 $("#contact_form_submit").removeClass("disabled");
                 $("#contact_form_submit").html("Send");
             },
