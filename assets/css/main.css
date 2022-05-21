@@ -39,6 +39,22 @@ b {
         font-size: 50px;
     }
 }
+@media only screen and (min-width: 678px) {
+    .landing-page {
+        height: 250%;
+    }
+    .home-header {
+        font-size: 50px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .landing-page {
+        height: 100%;
+    }
+    .home-header {
+        font-size: 50px;
+    }
+}
 .home-btn {
     background-color: rgb(117,201,43);
     color: white;
