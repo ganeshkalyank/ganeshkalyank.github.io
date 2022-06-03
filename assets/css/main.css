@@ -31,9 +31,17 @@ b {
 .home-text {
     font-size: 18px;
 }
-@media only screen and (max-width: 678px) {
+@media only screen and (max-width: 339px) {
     .landing-page {
         height: 150%;
+    }
+    .home-header {
+        font-size: 50px;
+    }
+}
+@media only screen and (min-width: 339px) {
+    .landing-page {
+        height: 250%;
     }
     .home-header {
         font-size: 50px;
