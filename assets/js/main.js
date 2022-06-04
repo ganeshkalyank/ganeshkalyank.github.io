@@ -11,7 +11,9 @@ $(document).ready(function(){
         $(this).addClass("shadow navbar-blur");
         $("#navIcon").html('<i class="fa-solid fa-xmark"></i>');
     });
-    
+    $(window).on("load",function(){
+        $("#preLoader").fadeOut();
+    });
     $("#navBar").on("hide.bs.collapse",function(){
         var height = $(window).scrollTop();
         if(height<250) $(this).removeClass("shadow navbar-blur")
