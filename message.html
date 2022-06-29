@@ -11,12 +11,12 @@
     <div class="grid sm:grid-cols-1 lg:grid-cols-3 mt-10 mx-5">
         <div></div>
         <div class="shadow-2xl rounded-2xl p-5 bg-white backdrop-blur-xl">
-            <form class="text-black" id="msg-form" name="msg" method="post" action="https://formspree.io/f/mzboqwao">
+            <form class="text-black" id="msg-form" method="post" action="https://formspree.io/f/mzboqwao">
                 <h3 class="mb-3 text-center bg-[#75c92b] text-[#f7ffe8] p-3 rounded-lg text-2xl font-bold">Send an anonymous message!</h3>
                 <p>To, @ganeshkalyank</p>
                 <div class="w-full border-solid border-b-2 border-gray-300 my-5"></div>
                 <label for="message">Message</label>
-                <textarea class="px-3 py-3 w-full border-solid border-b-2 border-[#75c92b] focus:border-none focus:border-[#75c92b] focus:outline-[#75c92b] bg-transparent focus:rounded-lg mt-2" placeholder="Type something..." style="resize:none" id="message"></textarea>
+                <textarea name="msg" class="px-3 py-3 w-full border-solid border-b-2 border-[#75c92b] focus:border-none focus:border-[#75c92b] focus:outline-[#75c92b] bg-transparent focus:rounded-lg mt-2" placeholder="Type something..." style="resize:none" id="message"></textarea>
                 <button type="submit" id="msg-form-button" class="w-full mt-2 bg-[#75c92b] p-3 text-[#f7ffe8] rounded-lg hover:opacity-75">Send message</button>
                 <p id="msg-form-status" class="mt-2"></p>
             </form>
