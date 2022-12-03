@@ -20,10 +20,19 @@ b {
 }
 .landing-page {
     height: 100%;
-    background: rgb(247, 255, 232);
+    /* background: rgb(247, 255, 232); */
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(247,255,232,0.72) 0%, rgba(230,255,180,0.72) 100%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
+}
+.landing-social-link {
+    font-size: 36px;
+    transition: .3s;
+}
+.landing-social-link:hover {
+    color: rgb(117,201,43);
 }
 .home-header {
     font-size: 75px;
