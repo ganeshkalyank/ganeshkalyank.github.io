@@ -21,28 +21,32 @@ $(document).ready(function(){
     });
     $('#contact_form').on('submit',function(e){
         e.preventDefault();
-        $("#contact_form_submit").addClass("disabled");
-        $("#contact_form_submit").html("Sending...");
         var form = $(this);
-        var url = form.attr('action');
-        $.ajax({
-            method: 'POST',
-            url: url,
-            data: form.serialize(),
-            dataType: 'json',
-            success: function(data) {
-                if (data.status=="success") {var class_name = "success"}
-                else if (data.status=="error") {var class_name = "danger"}
-                else {var class_name = "warning"}
-                $("#contact_form_status").html("<p class='alert alert-"+class_name+"'>"+data.message+"</p>");
-                $("#contact_form_submit").removeClass("disabled");
-                $("#contact_form_submit").html("Send");
-            },
-            error: function() {
-                $("#contact_form_status").html("<p class='alert alert-danger'>There was an error! Please try again!</p>");
-                $("#contact_form_submit").removeClass("disabled");
-                $("#contact_form_submit").html("Send");
-            }
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LcE02wjAAAAAD0K2lsdu5hq0KmsfUhGuzQKKrRO', {action: 'submit'}).then(function(token) {
+                $("#contact_form_submit").addClass("disabled");
+                $("#contact_form_submit").html("Sending...");
+                var url = form.attr('action');
+                $.ajax({
+                    method: 'POST',
+                    url: url,
+                    data: form.serialize()+"&rctoken="+token,
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data.status=="success") {var class_name = "success"}
+                        else if (data.status=="error") {var class_name = "danger"}
+                        else {var class_name = "warning"}
+                        $("#contact_form_status").html("<p class='alert alert-"+class_name+"'>"+data.message+"</p>");
+                        $("#contact_form_submit").removeClass("disabled");
+                        $("#contact_form_submit").html("Send");
+                    },
+                    error: function() {
+                        $("#contact_form_status").html("<p class='alert alert-danger'>There was an error! Please try again!</p>");
+                        $("#contact_form_submit").removeClass("disabled");
+                        $("#contact_form_submit").html("Send");
+                    }
+                });
+            });
         });
     });
 });

@@ -332,3 +332,6 @@ b {
         );
     }
 }
+.grecaptcha-badge {
+    visibility: hidden;
+}
