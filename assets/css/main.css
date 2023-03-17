@@ -89,7 +89,8 @@ b {
 }
 .card-hover-anim {
     background-size: 400% 400%;
-    background-image: radial-gradient(rgb(247, 255, 232) 50%, transparent 50%);
+    background-position: 20% 20%;
+    background-image: radial-gradient(rgba(247,255,232,0.72) 0%, rgba(230,255,180,0.72) 25%, transparent 50%);
     transition: background-position .3s, color .3s ease;
 }
 .card-hover-anim:hover {
