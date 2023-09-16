@@ -146,7 +146,7 @@ b {
 .skill-img {
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    object-fit: contain;
 }
 .submit-btn {
     background-color: rgb(117,201,43);
@@ -335,4 +335,13 @@ b {
 }
 .grecaptcha-badge {
     visibility: hidden;
+}
+.mt-125 {
+    margin-top: 125px;
+}
+.mt-80 {
+    margin-top: 80px;
+}
+.mt-75 {
+    margin-top: 75px;
 }
